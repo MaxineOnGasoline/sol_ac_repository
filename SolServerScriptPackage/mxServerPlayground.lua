@@ -39,12 +39,12 @@ function script.update(dt)
             end
         end
     end
-    
+    -- quick edit: instead of rain light, this code enables endu lights (extra D option) in gtm cars when player uses headlights
     if IsExtraARainLight then
-        if SIM.rainWetness > 0.001 then
-            ac.setExtraSwitch(0,true)
+            if CAR.headlightsActive then
+            ac.setExtraSwitch(3,true)
         else
-            ac.setExtraSwitch(0,false)
+            ac.setExtraSwitch(3,false)
         end
     end
 end
