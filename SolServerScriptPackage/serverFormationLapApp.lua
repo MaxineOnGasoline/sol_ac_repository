@@ -149,7 +149,7 @@ function UI_StartingLights()
             isStandBy = false
             driverInfo = "FORMATION LAP"
             isRaceStarted = false
-            lightsFadeout = 500
+            lightsFadeout = 150
             startTime = 0
         end
     end
@@ -167,11 +167,11 @@ end
 
 function script.update(dt)
 
-    ac.debug("CarClass",CarClass)
-    ac.debug("isFormationLap",isFormationLap)
-    ac.debug("isStandBy",isStandBy)
-    ac.debug("isRaceStarted",isRaceStarted)
-    ac.debug("startTime",startTime)
+    --ac.debug("CarClass",CarClass)
+    --ac.debug("isFormationLap",isFormationLap)
+    --ac.debug("isStandBy",isStandBy)
+    --ac.debug("isRaceStarted",isRaceStarted)
+    --ac.debug("startTime",startTime)
     ac.debug("lightsFadeout",lightsFadeout)
 
 end
