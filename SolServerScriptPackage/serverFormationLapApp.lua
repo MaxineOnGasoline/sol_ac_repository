@@ -95,7 +95,7 @@ local messageReceiver = ac.OnlineEvent({
             isFormationLap = false
             isStandBy = false
             isRaceStarted = false
-            lightsFadeout = 500
+            lightsFadeout = 150
             startTime = 0
         end
     end
