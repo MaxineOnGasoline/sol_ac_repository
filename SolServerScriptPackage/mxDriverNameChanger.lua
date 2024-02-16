@@ -197,7 +197,7 @@ StoredData = {
 {id='76561198206895407', teamNumber=279, teamName='WRS Interstellar by Midas', name='Kacper  Kasztelan', nationality='POL', isLan=false},
 {id='76561198272559221', teamNumber=79, teamName=' Midas Racing Black', name='Mikołaj   Południak', nationality='POL', isLan=false},
 {id='76561198441386095', teamNumber=79, teamName=' Midas Racing Black', name='Jan  Gliszczyński', nationality='POL', isLan=false},
-{id='76561198103068400', teamNumber=79, teamName=' Midas Racing Black', name='Aleksander  Studziński ', nationality='POL', isLan=false},
+{id='76561198103068400', teamNumber=179, teamName=' Midas Racing ', name='Aleksander  Studziński ', nationality='POL', isLan=false},
 {id='76561198083247979', teamNumber=79, teamName=' Midas Racing Black', name='Kacper  Kazimierski', nationality='POL', isLan=false},
 {id='76561198974069912', teamNumber=79, teamName=' Midas Racing Black', name='Mateusz  Nawrot', nationality='POL', isLan=false},
 {id='76561199133557694', teamNumber=104, teamName='Apex One GT4 #3', name='Olaf Moryś', nationality='POL', isLan=false},
