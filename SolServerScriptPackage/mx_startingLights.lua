@@ -128,7 +128,7 @@ end
 
 function script.drawUI(dt)
     
-    if SessionType == 3 then
+    if ac.getSession(SIM.currentSessionIndex).type == ac.SessionType.Race then
         if RenderLights then
             UI_StartingLights()
         end
