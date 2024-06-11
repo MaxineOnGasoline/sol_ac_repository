@@ -60,78 +60,76 @@ function script.update(dt)
     ac.debug("HasSessionStarted",HasSessionStarted)
     ac.debug("RenderLights",RenderLights)
     ac.debug("SessionStartTimeMS",SessionStartTimeMS)
+    ac.debug("SessionType",SessionType)
     ac.debug("sessionTimeLeft",SIM.sessionTimeLeft)
     ac.debug("SIM.isSessionStarted",SIM.isSessionStarted)
-    ac.debug("length in min",ac.getSession(SIM.currentSessionIndex).durationMinutes*60*1000)
     
     for i = 0, 4, 1 do
         ac.debug(i,STARTINGLIGHTS[i])
     end
 
-    if SessionType == 3 then
+    if SIM.sessionTimeLeft > SessionStartTimeMS + 6000 and not SIM.isSessionStarted then
+        HasSessionStarted = false
+    end
 
-        if SIM.sessionTimeLeft > SessionStartTimeMS + 6000 and not SIM.isSessionStarted then
-            HasSessionStarted = false
-        end
-    
-    
-        if not HasSessionStarted then
-    
-            if SIM.sessionTimeLeft > SessionStartTimeMS + 5000 then
-                if RenderLights then
-                    RenderLights = false
-                end
-            else
-                RenderLights = true
-            end
-    
+    if not HasSessionStarted then
+
+        if SIM.sessionTimeLeft > SessionStartTimeMS + 5000 then
             if RenderLights then
-            
-                if SIM.sessionTimeLeft < SessionStartTimeMS + 5000 then
-                    for i = 0, 4, 1 do
-                        STARTINGLIGHTS[i] = GRAYTRANS
-                    end
-                end
+                RenderLights = false
+            end
+        else
+            RenderLights = true
+        end
+
+        if RenderLights then
         
-                if SIM.sessionTimeLeft < SessionStartTimeMS + 4000 then
-                    STARTINGLIGHTS[0] = rgbm.colors.red
+            if SIM.sessionTimeLeft < SessionStartTimeMS + 5000 then
+                for i = 0, 4, 1 do
+                    STARTINGLIGHTS[i] = GRAYTRANS
                 end
-        
-                if SIM.sessionTimeLeft < SessionStartTimeMS + 3500 then
-                    STARTINGLIGHTS[1] = rgbm.colors.red
-                end
-        
-                if SIM.sessionTimeLeft < SessionStartTimeMS + 3000 then
-                    STARTINGLIGHTS[2] = rgbm.colors.red
-                end
-        
-                if SIM.sessionTimeLeft < SessionStartTimeMS + 2500 then
-                    STARTINGLIGHTS[3] = rgbm.colors.red
-                end
-        
-                if SIM.sessionTimeLeft < SessionStartTimeMS + 2000 then
-                    STARTINGLIGHTS[4] = rgbm.colors.red
-                end
-        
-                if SIM.sessionTimeLeft < SessionStartTimeMS then
-                    for i = 0, 4, 1 do
-                        STARTINGLIGHTS[i] = rgbm.colors.lime
-                        HasSessionStarted = true
-                    end
+            end
+    
+            if SIM.sessionTimeLeft < SessionStartTimeMS + 4000 then
+                STARTINGLIGHTS[0] = rgbm.colors.red
+            end
+    
+            if SIM.sessionTimeLeft < SessionStartTimeMS + 3500 then
+                STARTINGLIGHTS[1] = rgbm.colors.red
+            end
+    
+            if SIM.sessionTimeLeft < SessionStartTimeMS + 3000 then
+                STARTINGLIGHTS[2] = rgbm.colors.red
+            end
+    
+            if SIM.sessionTimeLeft < SessionStartTimeMS + 2500 then
+                STARTINGLIGHTS[3] = rgbm.colors.red
+            end
+    
+            if SIM.sessionTimeLeft < SessionStartTimeMS + 2000 then
+                STARTINGLIGHTS[4] = rgbm.colors.red
+            end
+    
+            if SIM.sessionTimeLeft < SessionStartTimeMS then
+                for i = 0, 4, 1 do
+                    STARTINGLIGHTS[i] = rgbm.colors.lime
+                    HasSessionStarted = true
                 end
             end
         end
-    
-        if SIM.sessionTimeLeft < SessionStartTimeMS - 3000 then
-            RenderLights = false
-        end
+    end
+
+    if SIM.sessionTimeLeft < SessionStartTimeMS - 3000 then
+        RenderLights = false
     end
 end
 
 function script.drawUI(dt)
     
-    if RenderLights then
-        UI_StartingLights()
+    if SessionType == 3 then
+        if RenderLights then
+            UI_StartingLights()
+        end
     end
 
 end
