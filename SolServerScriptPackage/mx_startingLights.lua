@@ -57,7 +57,7 @@ function UI_StartingLights()
 end
 
 function script.update(dt)
-    --[[ac.debug("HasSessionStarted",HasSessionStarted)
+    ac.debug("HasSessionStarted",HasSessionStarted)
     ac.debug("RenderLights",RenderLights)
     ac.debug("SessionStartTimeMS",SessionStartTimeMS)
     ac.debug("sessionTimeLeft",SIM.sessionTimeLeft)
@@ -67,7 +67,7 @@ function script.update(dt)
     for i = 0, 4, 1 do
         ac.debug(i,STARTINGLIGHTS[i])
     end
-]]
+
     if SessionType == 3 then
 
         if SIM.sessionTimeLeft > SessionStartTimeMS + 6000 and not SIM.isSessionStarted then
