@@ -7,8 +7,7 @@ SIM = ac.getSim()
 
 RenderLights = false
 HasSessionStarted = false
-SessionType = ac.getSession(SIM.currentSessionIndex).type
-SessionStartTimeMS = ac.getSession(SIM.currentSessionIndex).durationMinutes*60*1000
+
 
 
 --if SIM.isSessionStarted then
@@ -64,6 +63,9 @@ function script.update(dt)
     ac.debug("sessionTimeLeft",SIM.sessionTimeLeft)
     ac.debug("SIM.isSessionStarted",SIM.isSessionStarted)
     
+    SessionType = ac.getSession(SIM.currentSessionIndex).type
+    SessionStartTimeMS = ac.getSession(SIM.currentSessionIndex).durationMinutes*60*1000
+
     for i = 0, 4, 1 do
         ac.debug(i,STARTINGLIGHTS[i])
     end
