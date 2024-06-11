@@ -56,19 +56,18 @@ function UI_StartingLights()
 end
 
 function script.update(dt)
-    ac.debug("HasSessionStarted",HasSessionStarted)
+    --[[ac.debug("HasSessionStarted",HasSessionStarted)
     ac.debug("RenderLights",RenderLights)
     ac.debug("SessionStartTimeMS",SessionStartTimeMS)
     ac.debug("SessionType",SessionType)
     ac.debug("sessionTimeLeft",SIM.sessionTimeLeft)
     ac.debug("SIM.isSessionStarted",SIM.isSessionStarted)
-    
-    SessionType = ac.getSession(SIM.currentSessionIndex).type
-    SessionStartTimeMS = ac.getSession(SIM.currentSessionIndex).durationMinutes*60*1000
-
     for i = 0, 4, 1 do
         ac.debug(i,STARTINGLIGHTS[i])
     end
+    ]]
+    SessionType = ac.getSession(SIM.currentSessionIndex).type
+    SessionStartTimeMS = ac.getSession(SIM.currentSessionIndex).durationMinutes*60*1000
 
     if SIM.sessionTimeLeft > SessionStartTimeMS + 6000 and not SIM.isSessionStarted then
         HasSessionStarted = false
