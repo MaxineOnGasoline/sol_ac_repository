@@ -5,9 +5,16 @@
 CAR = ac.getCar(0)
 SIM = ac.getSim()
 
+GUID = ac.getUserSteamID()
+
+if GUID == '76561198141438094' then
+    IsTV = true
+else
+    IsTV = false
+end
+
 RenderLights = false
 HasSessionStarted = false
-
 
 
 --if SIM.isSessionStarted then
@@ -126,11 +133,11 @@ function script.update(dt)
 end
 
 function script.drawUI(dt)
-    
     if ac.getSession(SIM.currentSessionIndex).type == ac.SessionType.Race then
-        if RenderLights then
-            UI_StartingLights()
+        if not IsTV then
+            if RenderLights then
+                UI_StartingLights()
+            end
         end
     end
-
 end
