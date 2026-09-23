@@ -18,7 +18,7 @@ ac.onOnlineWelcome(function (message, config)
     end
 
     for index, version in ipairs(ver) do
-        if version == ac.getPatchVersionCode() or guid == '76561199161892340' then
+        if version == ac.getPatchVersionCode() or guid == '76561199161892340' or guid == '76561198063989268' then
             versionCorrect = true
         end
     end
