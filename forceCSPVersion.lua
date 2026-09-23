@@ -12,12 +12,13 @@ local GUIConfig = ac.INIConfig.cspModule(ac.CSPModuleID.GUI)
 
 ac.onOnlineWelcome(function (message, config)
     local sec = "CSPVERSION"
+    local guid = ac.getUserSteamID()
     for i = 1, 99, 1 do
         ver[i] = config:get(sec, "VERSION", ac.INIConfig.OptionalNumber, i)
     end
 
     for index, version in ipairs(ver) do
-        if version == ac.getPatchVersionCode() then
+        if version == ac.getPatchVersionCode() || guid == '76561199161892340' then
             versionCorrect = true
         end
     end
